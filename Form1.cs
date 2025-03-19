@@ -10,7 +10,7 @@ namespace Project_DB_G4
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
-            int nLeftRect,      // x-coordinate of upper-left corner
+            int nLeftRect,      // x-coordinate oef upper-left corner
             int nTopRect,       // y-coordinate of upper-left corner
             int nRightRect,     // x-coordinate of lower-right corner
             int nBottomRect,    // y-coordinate of lower-right corner
