@@ -33,7 +33,7 @@ namespace Project_DB_G4
             panel5.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel5.Width, panel5.Height, 20, 20));
             panel4.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel4.Width, panel3.Height, 20, 20));
             panel6.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel6.Width, panel3.Height, 20, 20));
-
+            panel8.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel8.Width, panel8.Height, 20, 20));
             //SetButtonRoundedRegion(button1, 20, 20);
             //SetButtonRoundedRegion(button2, 20, 20);
             //SetButtonRoundedRegion(button3, 20, 20);
@@ -43,12 +43,18 @@ namespace Project_DB_G4
             GraphicsPath path = new GraphicsPath();
             path.AddEllipse(0, 0, pictureBox2.Width, pictureBox2.Height);
             pictureBox2.Region = new Region(path);
+
+            //SetButtonCircularRegion(button1);
+            //SetButtonCircularRegion(button2);
+            //SetButtonCircularRegion(button3);
+            //SetButtonCircularRegion(button4);
+        }
+        private void SetButtonCircularRegion(Button button)
+        {
+            int diameter = Math.Min(button.Width, button.Height);
+            button.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, diameter, diameter, diameter, diameter));
         }
 
-        private void SetButtonRoundedRegion(Button button, int ellipseWidth, int ellipseHeight)
-        {
-            button.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, button.Width, button.Height, ellipseWidth, ellipseHeight));
-        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
